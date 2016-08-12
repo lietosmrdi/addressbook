@@ -9,13 +9,13 @@
 		    <section class="navbar-section">
 		        <input 
 		        	type="text" 
-		        	class="form-input input-inline" 
+		        	class="form-input input-inline js-searchContactList" 
 		        	placeholder="Search contacts...">
 
 	        	<button 
 	        		class="btn btn-primary" 
 	        		data-remodal-target="create-contact">
-	        		Create contact
+	        		Create a contact
 	        	</button>
 	   		</section>
 

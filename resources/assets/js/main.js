@@ -32,6 +32,7 @@ App.createContact = {
 		$(document)
 			.on('submit', '.js-addNewContact', this.create.bind(this))
 			.on('click', '.js-contactRemove', this.destroy.bind(this))
+			.on('keyup', '.js-searchContactList', this.search.bind(this))
 			.on('click', '.js-contactEdit', this.startEdit.bind(this));
 	},
 
@@ -56,6 +57,7 @@ App.createContact = {
 			});
 
 			$form[0].reset();
+			$form.closest('[data-remodal-id=create-contact]').remodal().close();
 		})
 		.fail(function() {
 			console.log("error");
@@ -138,6 +140,15 @@ App.createContact = {
 			console.log("complete");
 		});
 		
+	},
+
+	search: function(event) {
+		event.preventDefault();
+
+		var $el   = $(event.currentTarget);
+		var value = $el.val();
+
+		App.contactList.list.search(value);
 	},
 
 };

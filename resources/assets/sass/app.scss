@@ -1,3 +1,4 @@
+$primaryColor: #5764c6;
 $color-danger: #d02929;
 
 body {
@@ -28,7 +29,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-	z-index: 99999;
+  	z-index: 99;
     position: fixed;
     background-color: #ffffff;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
@@ -47,11 +48,15 @@ body {
 }
 
 .contactRow {
-	&.is-active .contactData { display: none; }
+	&.is-active .contactData,
+    &.is-active .contactData-icon { display: none; }
 	&:not(.is-active) .editContactInput { display: none; }
 }
 
-.table { width: 100% }
+.contactData-icon {
+    color: $primaryColor;
+    margin-right: .75rem;
+}
 
 .btn.btn--link {
 	padding: 0;
@@ -89,6 +94,14 @@ body {
 }
 
 .u-inline { display: inline-block }
+
+.table thead {
+    border-bottom: 1px solid #ddd;
+}
+
+.table th {
+    border: 0;
+}
 
 /* Remodal css */
 html.remodal-is-locked {

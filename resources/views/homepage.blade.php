@@ -9,10 +9,25 @@
 	    <div class="columns">
 
 	        <div class="column col-md-3">
-		        <h4>Groups</h4>
+		        <h4>
+		        	Groups 
+		        	<button 
+		        		class="btn btn--link tooltip tooltip-right" 
+	        			data-tooltip="Groups help you stay organized.">
+		        		create
+		        	</button>
+		        </h4>
 
 		        <ul class="groupsList">
-			         {!! $tree !!}
+			         @forelse ($groups as $group)
+			         	<li>
+			         		<button class="btn btn-link">
+			         			{{ $group->name }}
+			         		</button>
+			         	</li>
+			         @empty
+						No group just yet.
+			         @endforelse
 		        </ul>
 	        </div>
 
@@ -21,7 +36,7 @@
 
 		        	<h4 class="u-inline">Contacts</h4>
 
-		        	<table class="table table-hover">
+		        	<table class="table">
 					    <thead>
 					        <tr>
 					            <th 
@@ -53,9 +68,6 @@
 					            		Phone
 					            	</button>
 					            </th>
-
-					            <th>Tags</th>
-					            <th></th>
 					        </tr>
 					    </thead>
 

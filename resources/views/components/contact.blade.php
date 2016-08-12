@@ -6,6 +6,7 @@
 			name="name" 
 			class="form-input editContactInput js-editContactInput js-editContactInputName" 
 			value="{{ $contact->name }}">
+		<span class="fa fa-user contactData-icon"></span>
 		<span class="contactData js-contactData js-contactDataName">{{ $contact->name }}</span>
 	</td>
 
@@ -27,16 +28,17 @@
 		<span class="contactData js-contactData js-contactDataPhone">{{ $contact->phone }}</span>
 	</td>
 
-	<td class="tags">
+{{-- 	<td class="tags">
 		@foreach ($contact->tags as $tag)
 			<span class="tag">#{{ $tag->name }}</span>
 		@endforeach
-	</td>
+	</td> --}}
 
 	<td class="dropdown">
 
-		<button class="btn js-toggleDropdown">
-			<span class="fa fa-ellipsis-h"></span>
+		<button class="btn btn--link js-toggleDropdown">
+			More 
+			<span class="fa fa-angle-down"></span>
 		</button>
 
 		<ul class="menu dropdown-menu">
